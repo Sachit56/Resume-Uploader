@@ -6,9 +6,15 @@ Gender_Choices=(
     ('Female','Female'),
     ('Others','Others')
 )
-
+Job_Choices=(
+    ('Bhaktapur','Bhaktapur'),
+    ('Kathmandu','Kathmandu'),
+    ('Lalitpur','Lalitpur')
+)
 class ResumeForm(forms.ModelForm):
     gender=forms.ChoiceField(choices=Gender_Choices,widget=forms.RadioSelect)
+    job_city=forms.MultipleChoiceField(choices=Job_Choices,
+                                       widget=forms.CheckboxSelectMultiple)
     class Meta:
         model=ResumeModel
         fields="__all__"
