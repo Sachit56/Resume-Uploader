@@ -1,7 +1,12 @@
-# example/views.py
-from datetime import datetime
-
+from .forms import ResumeForm
+from django.views import View
 from django.http import HttpResponse
+from django.shortcuts import render
 
-def index(request):
-    return HttpResponse("deploy vayo")
+class Home(View):
+    def get(self,request):
+        form=ResumeForm()
+
+        return render(request,'example/home.html',{
+            'form':form
+        })
