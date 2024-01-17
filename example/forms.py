@@ -29,7 +29,7 @@ class ResumeForm(forms.ModelForm):
             'locality':forms.TextInput(attrs={'class':'form-control'}),
             'city':forms.TextInput(attrs={'class':'form-control'}),
             'pin':forms.TextInput(attrs={'class':'form-control'}),
-            'state':forms.TextInput(attrs={'class':'form-control'}),
+            'state':forms.Select(attrs={'class':'form-control'}),
             'mobile':forms.TextInput(attrs={'class':'form-control'}),
             'email':forms.TextInput(attrs={'class':'form-control'}),
             'job_city':forms.TextInput(attrs={'class':'form-control'}),
