@@ -10,3 +10,13 @@ class Home(View):
         return render(request,'example/home.html',{
             'form':form
         })
+    def post(self,request):
+        if request.POST:
+            form=ResumeForm(request.POST,request.FILES)
+
+            if form.is_valid():
+                form.save()
+                print('Sucess!')
+        return render(request,'example/home.html',{
+            'form':form
+        })        
