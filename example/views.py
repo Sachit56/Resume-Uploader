@@ -1,7 +1,7 @@
 from .forms import ResumeForm
 from django.views import View
 from django.http import HttpResponse
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_list_or_404
 from .models import ResumeModel
 
 class Home(View):
@@ -27,5 +27,8 @@ class Home(View):
 
 
 class CandidateView(View):
-    def get(self,request):
-        return render(request,'example/candidate.html')
+    def get(self,request,pk):
+        candidate=get_list_or_404(ResumeModel,pk=pk)
+        return render(request,'example/candidate.html',{
+            'candidates':candidate
+        })
