@@ -24,7 +24,7 @@ class ResumeForm(forms.ModelForm):
                 'image':'Profile Picture','Upload your Resume':'file'}
         widgets={
             'name':forms.TextInput(attrs={'class':'form-control'}),
-            'dob':forms.TextInput(attrs={'class':'form-control'}),
+            'dob':forms.TextInput(attrs={'class':'form-control','id':'datepicker'}),
             'gender':forms.TextInput(attrs={'class':'form-control'}),
             'locality':forms.TextInput(attrs={'class':'form-control'}),
             'city':forms.TextInput(attrs={'class':'form-control'}),
