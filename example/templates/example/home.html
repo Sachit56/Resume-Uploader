@@ -52,7 +52,7 @@
           {% for candidate in candidates %}
           <ul>
             <span>{{candidate.id}}. </span>
-            <a href="#">{{candidate.name}}</a>
+            <a href="{% url 'candidate' candidate.id %}">{{candidate.name}}</a>
 
           </ul>
 

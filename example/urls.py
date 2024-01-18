@@ -7,4 +7,5 @@ from . import views
 
 urlpatterns = [
     path('', views.Home.as_view(),name='home'),
+    path('candidate/<int:pk>/',views.CandidateView.as_view(),name='candidate')
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

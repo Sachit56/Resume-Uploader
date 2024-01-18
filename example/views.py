@@ -24,3 +24,8 @@ class Home(View):
         return render(request,'example/home.html',{
             'form':form
         })        
+
+
+class CandidateView(View):
+    def get(self,request):
+        return render(request,'example/candidate.html')
