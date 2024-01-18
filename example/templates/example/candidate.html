@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load static custom_filters %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -50,8 +51,9 @@
             <p>State: {{ candidate.state }}</p>
             <p>Mobile: {{ candidate.mobile }}</p>
             <p>Email: {{ candidate.email }}</p>
-            <p>Job Location: {{ candidate.job_city }}</p>
+            <p>Job Location: {{ candidate.job_city | remove_special_characters}}</p>
             <img src="{{ candidate.image.url }}" alt="Resume">
+            <p>Attachment: <a href="{{candidate.file.url}}">Download Resume</a></p>
           </div>
         {% endfor %}
       </div>
