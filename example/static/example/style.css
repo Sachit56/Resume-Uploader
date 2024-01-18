@@ -10,3 +10,7 @@
 .candidate-list > li{
     list-style-type: none;
 }
+
+#redirect_home{
+    margin: 20px;
+}
