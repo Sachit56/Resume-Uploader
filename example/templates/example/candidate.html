@@ -12,10 +12,24 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
   <link rel="stylesheet" href="{% static 'example/style.css' %}">
   <style>
-    /* Add your custom styles here */
+
     .candidates-list {
       border: 1px solid #ddd;
       padding: 10px;
+    }
+    .candidate-details {
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-top: 20px;
+      position: relative; 
+    }
+    .candidate-details img {
+      max-width: 20%;
+      height: auto;
+      position: absolute;
+      top: 10px; 
+      right: 10px; 
+      border: 2px solid #fff; 
     }
   </style>
 </head>
@@ -26,13 +40,21 @@
       <div class="col-md-8">
         <h1 class="display-4">Candidate Detail</h1>
         {% for candidate in candidates %}
-         {{candidate.name}}
-
-          
+          <div class="candidate-details">
+            <h2>{{ candidate.name }}</h2>
+            <p>Date of Birth: {{ candidate.dob }}</p>
+            <p>Gender: {{ candidate.gender }}</p>
+            <p>Locality: {{ candidate.locality }}</p>
+            <p>City: {{ candidate.city }}</p>
+            <p>Postal Code: {{ candidate.pin }}</p>
+            <p>State: {{ candidate.state }}</p>
+            <p>Mobile: {{ candidate.mobile }}</p>
+            <p>Email: {{ candidate.email }}</p>
+            <p>Job Location: {{ candidate.job_city }}</p>
+            <img src="{{ candidate.image.url }}" alt="Resume">
+          </div>
         {% endfor %}
-         
       </div>
-
     </div>
   </div>
 
