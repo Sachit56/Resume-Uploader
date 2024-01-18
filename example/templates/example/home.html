@@ -49,6 +49,16 @@
       <div class="col-md-4">
         <div class="candidates-list">
           <h4>List of Candidates</h4>
+          {% for candidate in candidates %}
+          <ul>
+            <span>{{candidate.id}}. </span>
+            <a href="#">{{candidate.name}}</a>
+
+          </ul>
+
+
+            
+          {% endfor %}
 
         </div>
       </div>
