@@ -58,9 +58,12 @@
             <img src="{{ candidate.image.url }}" alt="Resume">
             <p>Attachment: <a href="{{candidate.file.url}}">Download Resume</a></p>
           </div>
+          <div class="text-center">
+            <a href="/" class="btn btn-danger" id="redirect_home">Back to Form</a>
+          </div>
         {% endfor %}
       </div>
-      <a href="/" class="btn btn-danger" id="redirect_home">Back to Form</a>
+
     </div>
   </div>
 
